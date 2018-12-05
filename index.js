@@ -36,12 +36,13 @@ var getGoogleIds = function () {
 
             fs.readFile('./books' + '/' + data[i] + '/' + data[i] + '.html', 'utf8', function (err, html) {
                 if (html) {
+                    //worlds worst way of searching getting the google id out of the html.
                     var openString = escapeRegExp('https://play.google.com/store/books/details?id=');
                     var closeString = escapeRegExp('&amp;source=gbs_api');
                     var start = html.search(openString);
                     var end = html.search(closeString);
-                    var distance = end - (start + 47);
-                    var googleID = html.substr(start + 47, distance);
+                    var distance = end - (start + 47); //47 is a magic number
+                    var googleID = html.substr(start + 47, distance); 
                     fs.appendFileSync('googleIDs.txt', googleID + '\n');
                 }
             });
