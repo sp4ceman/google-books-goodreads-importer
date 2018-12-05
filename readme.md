@@ -17,3 +17,5 @@
 ## run node index2.js (this should outload isbn.txt)
 
 ## upload isbn.txt into goodreads csv importer (https://www.goodreads.com/review/import)
+
+## this works on my machine. it may not work on yours. 
